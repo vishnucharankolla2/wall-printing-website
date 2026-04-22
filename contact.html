@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wall Printing Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        button[type="submit"] {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+        
+        .contact-info {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .map {
+            margin-top: 2rem;
+            height: 300px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">WallPrint</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="mockup">
+        <div class="container">
+            <h2>See Your Wall Before Printing</h2>
+            <p>Upload a photo of your wall and we'll show you how your design will look!</p>
+            <div class="mockup-tool">
+                <input type="file" id="wall-photo" accept="image/*">
+                <input type="file" id="design-overlay" accept="image/*">
+                <button id="generate-mockup">Generate Mockup</button>
+                <div id="mockup-result"></div>
+            </div>
+        </div>
+    </section>
+            
+            <form class="contact-form" action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="wall-size">Wall Size (Width x Height in feet)</label>
+                    <input type="text" id="wall-size" name="wall-size" placeholder="e.g., 10x8" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="design">Upload Design (optional)</label>
+                    <input type="file" id="design" name="design" accept="image/*">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            
+            <div class="contact-info">
+                <h2>Other Ways to Reach Us</h2>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@wallprint.com</p>
+                <a href="https://wa.me/1234567890" class="btn primary">Chat on WhatsApp</a>
+                
+                <div class="map">
+                    <p>Location Map Placeholder</p>
+                    <!-- Embed Google Maps or similar here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wall Printing Services. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://wa.me/1234567890" class="whatsapp-btn">💬 WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

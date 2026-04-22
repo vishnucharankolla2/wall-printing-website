@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Wall Printing Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .filter-btn.active {
+            background-color: #ff0000;
+            color: white;
+        }
+        
+        .gallery-item {
+            display: none;
+        }
+        
+        .gallery-item.show {
+            display: block;
+        }
+        
+        .before-after {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .before-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+        
+        .after {
+            clip-path: inset(0 0 0 50%);
+        }
+        
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background-color: white;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">WallPrint</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Showcase of our high-quality wall printing work</p>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="home">Home</button>
+                <button class="filter-btn" data-filter="office">Office</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="custom">Custom Art</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item show home">
+                    <img src="home-print1.jpg" alt="Home Wall Print 1">
+                </div>
+                <div class="gallery-item show office">
+                    <img src="office-print1.jpg" alt="Office Wall Print 1">
+                </div>
+                <div class="gallery-item show commercial">
+                    <img src="commercial-print1.jpg" alt="Commercial Wall Print 1">
+                </div>
+                <div class="gallery-item show custom">
+                    <img src="custom-print1.jpg" alt="Custom Wall Print 1">
+                </div>
+                <div class="gallery-item show home">
+                    <img src="home-print2.jpg" alt="Home Wall Print 2">
+                </div>
+                <div class="gallery-item show office">
+                    <img src="office-print2.jpg" alt="Office Wall Print 2">
+                </div>
+                <!-- Before/After Slider -->
+                <div class="gallery-item show before-after-container">
+                    <h3>Before & After</h3>
+                    <div class="before-after">
+                        <img src="before.jpg" alt="Before" class="before">
+                        <img src="after.jpg" alt="After" class="after">
+                        <div class="slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wall Printing Services. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://wa.me/1234567890" class="whatsapp-btn">💬 WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+        // Before/After Slider
+        const slider = document.querySelector('.slider');
+        const afterImg = document.querySelector('.after');
+        let isDragging = false;
+
+        slider.addEventListener('mousedown', () => isDragging = true);
+        document.addEventListener('mouseup', () => isDragging = false);
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const rect = slider.parentElement.getBoundingClientRect();
+            const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+            const percent = (x / rect.width) * 100;
+            afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+            slider.style.left = `${percent}%`;
+        });
+    </script>
+</body>
+</html>

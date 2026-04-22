@@ -1,0 +1,445 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn.primary {
+    background-color: #ff0000; /* Red from logo */
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #cc0000;
+}
+
+.btn.secondary {
+    background-color: #00ff00; /* Green from logo */
+    color: black;
+}
+
+.btn.secondary:hover {
+    background-color: #00cc00;
+}
+
+/* Header */
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-text {
+    background: rgba(0,0,0,0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Value Props */
+.value-props {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.value-props .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.prop {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.prop .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.prop h3 {
+    margin-bottom: 1rem;
+}
+
+/* About Tech */
+.about-tech {
+    padding: 4rem 0;
+    background-color: #f4f4f4;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.machine-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Featured Work */
+.featured-work {
+    padding: 4rem 0;
+    background-color: white;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Process */
+.process {
+    padding: 4rem 0;
+    background-color: #f4f4f4;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.step-number {
+    display: block;
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* CTA Bottom */
+.cta-bottom {
+    padding: 4rem 0;
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+}
+
+.cta-bottom h2 {
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        display: none; /* Simple mobile menu, can be improved */
+    }
+}
+
+/* Services */
+.services {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.service {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.service h2 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.service ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service li {
+    margin-bottom: 0.5rem;
+}
+
+.service li:before {
+    content: "✓ ";
+    color: #00ff00;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* About */
+.about {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.about h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.story, .vision {
+    margin-bottom: 3rem;
+}
+
+.why-choose {
+    margin-top: 3rem;
+}
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.reason {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.reason h3 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+/* Contact */
+.contact {
+    padding: 4rem 0;
+    background-color: #f4f4f4;
+}
+
+.contact h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Mockup */
+.mockup {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.mockup h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mockup p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mockup-tool {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mockup-tool input {
+    display: block;
+    margin: 1rem auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#generate-mockup {
+    background-color: #00ff00;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#generate-mockup:hover {
+    background-color: #00cc00;
+}
+
+#mockup-result {
+    margin-top: 2rem;
+    min-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
